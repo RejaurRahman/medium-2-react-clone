@@ -25,3 +25,19 @@ pnpm create next-app --example with-tailwindcss with-tailwindcss-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+## Sanity Initialization
+
+```bash
+sanity login
+```
+
+I selected Github, but you choose the option you use to login to Sanity
+
+```bash
+sanity start
+```
+
+It will say _'Content Studio successfully compiled! Go to http://localhost:3333'_
+
+A browser page will open to login to your Sanity account.
