@@ -26,7 +26,7 @@ pnpm create next-app --example with-tailwindcss with-tailwindcss-app
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
-## Sanity Initialization
+## Sanity Integration
 
 ```bash
 sanity login
@@ -41,3 +41,20 @@ sanity start
 It will say _'Content Studio successfully compiled! Go to http://localhost:3333'_
 
 A browser page will open to login to your Sanity account.
+
+## Setup Sanity initialization
+
+Create _'.env.local'_ in the root of the repository
+
+You will need to add the following code:
+
+```bash
+NEXT_PUBLIC_SANITY_DATASET={value}
+NEXT_PUBLIC_SANITY_PROJECT_ID={value}
+```
+
+Replace _'{value}'_ with the data you will find in:
+
+```bash
+/sanity-medium/sanity.json
+```
