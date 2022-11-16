@@ -29,7 +29,7 @@ const Home: NextPage<Props> = ({ posts }) => {
               return (
                 <Link
                   key={post._id}
-                  href={`/posts/${post.slug.current}`}
+                  href={`/post/${post.slug.current}`}
                 >
                   <div className='border rounded-lg group cursor-pointer overflow-hidden'>
                     {
