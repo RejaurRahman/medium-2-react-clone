@@ -4,13 +4,25 @@ import Header from '../../components/Header/Header'
 import { sanityClient, urlFor } from '../../sanity'
 import { Post } from '../../typings'
 import PortableText from 'react-portable-text'
+import { useForm, SubmitHandler } from 'react-hook-form'
+
+interface IFormInput {
+  _id: string
+  name: string
+  email: string
+  comment: string
+}
 
 interface Props {
   post: Post
 }
 
 const Post = ({ post }: Props) => {
-  console.log(post)
+  const {
+    register,
+    handleSubmit,
+    formState: {errors}
+  } = useForm<IFormInput>()
 
   return (
     <main>
@@ -84,9 +96,17 @@ const Post = ({ post }: Props) => {
         <h4 className='text-3xl font-bold'>Leave a comment below!</h4>
         <hr className='py-3 mt-2' />
 
+        <input
+          {...register('_id')}
+          type='hidden'
+          name='_id'
+          value={post._id}
+        />
+
         <label className='block mb-5'>
           <span className='text-gray-700'>Name</span>
           <input
+            {...register('name', {required: true})}
             className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring'
             placeholder='Ronny Rahman'
             type='text'
@@ -95,6 +115,7 @@ const Post = ({ post }: Props) => {
         <label className='block mb-5'>
           <span className='text-gray-700'>Email</span>
           <input
+            {...register('email', {required: true})}
             className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring'
             placeholder='rejaur.ronny.rahman@gmail.com'
             type='email'
@@ -103,11 +124,45 @@ const Post = ({ post }: Props) => {
         <label className='block mb-5'>
           <span className='text-gray-700'>Comment</span>
           <textarea
+            {...register('comment', {required: true})}
             className='shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring'
             placeholder='Add your comment here'
             rows={8}
           />
         </label>
+
+        <div className='flex flex-col p-5'>
+          {
+            errors.name && (
+              <span className='text-red-500'>
+                - The Name Field is required
+              </span>
+            )
+          }
+
+          {
+            errors.comment && (
+              <span className='text-red-500'>
+                - The Comment Field is required
+              </span>
+            )
+          }
+
+          {
+            errors.email && (
+              <span className='text-red-500'>
+                - The Email Field is required
+              </span>
+            )
+          }
+        </div>
+
+        <button
+          type='submit'
+          className='shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer'
+        >
+          Submit
+        </button>
       </form>
     </main>
   )
