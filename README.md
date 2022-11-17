@@ -1,4 +1,8 @@
-# Next.js + Tailwind CSS Example
+# Medium Blog Clone
+
+Built using Next.JS (React.JS Framework), TypeScript and Tailwind CSS. Content data is pulled from Sanity CMS. This project was referencing a tutorial on YouTube by 'Sonny Sangha'.
+
+## Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
 
