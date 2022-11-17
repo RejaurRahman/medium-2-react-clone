@@ -72,7 +72,6 @@ const Post = ({ post }: Props) => {
 
         <div className='mt-10'>
           <PortableText
-            className=''
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
             content={post.body}
@@ -107,7 +106,9 @@ const Post = ({ post }: Props) => {
       {
         submitted ? (
           <div className='flex flex-col py-10 my-10 bg-yellow-500 text-white max-w-2xl mx-auto'>
-            <h3 className='text-3xl font-bold'>Thank you for submitting your comment!</h3>
+            <h3 className='text-3xl font-bold'>
+              Thank you for submitting your comment!
+            </h3>
             <p>Once it has been approved, it will appear below!</p>
           </div>
         ): (
@@ -135,6 +136,7 @@ const Post = ({ post }: Props) => {
                 type='text'
               />
             </label>
+
             <label className='block mb-5'>
               <span className='text-gray-700'>Email</span>
               <input
@@ -144,6 +146,7 @@ const Post = ({ post }: Props) => {
                 type='email'
               />
             </label>
+
             <label className='block mb-5'>
               <span className='text-gray-700'>Comment</span>
               <textarea
@@ -195,14 +198,14 @@ const Post = ({ post }: Props) => {
         <hr className='pb-2' />
 
         {
-          post.comments.map((comment) => {
-            <div key={comment._id}>
+          post.comments.map((comment: any) => (
+             <div key={comment._id}>
               <p>
                 <span className='text-yellow-500'>{comment.name}</span>
                 :{comment.comment}
               </p>
             </div>
-          })
+          ))
         }
       </div>
     </main>
@@ -248,7 +251,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       image
     },
     'comments': *[
-      _type == "comments" &&
+      _type == "comment" &&
       post._ref == ^._id &&
       approved == true
     ]
