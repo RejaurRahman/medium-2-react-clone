@@ -42,6 +42,12 @@ It will say _'Content Studio successfully compiled! Go to http://localhost:3333'
 
 A browser page will open to login to your Sanity account.
 
+To deploy sanity cms to production you need to run:
+
+```bash
+sanity deploy
+```
+
 ## Setup Sanity initialization
 
 Create _'.env.local'_ in the root of the repository
@@ -51,7 +57,10 @@ You will need to add the following code:
 ```bash
 NEXT_PUBLIC_SANITY_DATASET={value}
 NEXT_PUBLIC_SANITY_PROJECT_ID={value}
+SANITY_API_TOKEN={token}
 ```
+
+Token you get from the API settings for the cms application on Sanity.io
 
 Replace _'{value}'_ with the data you will find in:
 
