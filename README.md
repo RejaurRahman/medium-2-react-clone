@@ -2,6 +2,27 @@
 
 Built using Next.JS (React.JS Framework), TypeScript and Tailwind CSS. Content data is pulled from Sanity CMS. This project was referencing a tutorial on YouTube by 'Sonny Sangha'.
 
+[Production URL](https://medium-2-nextjs-clone.netlify.app/)
+
+Global Updates
+
+- React Router to add content on pages mentioned in navigation
+- _'Get Started'_ and _'Sign In'_ should display in modal and allows users to access there own account
+- Sticky navigation when scrolling past the hero image
+- Search functionality
+
+Updates to make on Homepage:
+
+- List of popular categories
+
+Updates to make on Individual posts:
+
+- Seperate navigation and UI
+- Read time on posts
+- Share posts
+- Similar posts section
+- Authors page
+
 ## Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
