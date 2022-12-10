@@ -23,6 +23,16 @@ Updates to make on Individual posts:
 - Similar posts section
 - Authors page
 
+## Medium Homepage Screen - Before making updates to cloned project
+
+![Medium Homepage Preview Page Image](medium-homepage.jpg)
+
+## Medium Blogpost Screen - Before making updates to cloned project
+
+![Medium Blogpost Preview Page Image](medium-blog-post.jpg)
+
+## Getting Started with Create React App and Redux
+
 ## Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
